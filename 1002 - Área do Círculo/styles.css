@@ -1,0 +1,73 @@
+body {
+    background-color: #0e0c0c;
+    background-image: linear-gradient(160deg, #0e0c0c 0%, #414747 100%);
+    font-family: 'Poppins', sans-serif;
+}
+
+main {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+main h1 {
+    font-size: 3em;
+    color: #32ff7e;
+    margin-bottom: 1em;
+    text-transform: uppercase;
+}
+
+main .circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #f7f7f7;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+}
+
+main .circle h2 {
+    color: black;
+}
+
+main .circle .valor {
+    background-color: #4b4b4b;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 1.2em;
+    border-radius: 10px;
+    opacity: 0.8;
+    border: none;
+    padding: 5px;
+    font-size: 1.2em;
+    text-align: center;
+}
+
+main button {
+    width: 110px;
+    height: 2em;
+    border-radius: 10px;
+    border: none;
+    background-color: #32ff7e;
+    font-size: 1em;
+    font-weight: 700;
+    margin-top: 5px;
+}
+
+main .result {
+    margin-top: 1.5em;
+}
+
+main .result p {
+    font-size: 3em;
+    color: white;
+
+}
