@@ -1,0 +1,63 @@
+body {
+    background-color: #0e0c0c;
+    background-image: linear-gradient(160deg, #0e0c0c 0%, #414747 100%);
+    font-family: 'Poppins', sans-serif;
+}
+
+main {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+main h1 {
+    font-size: 3em;
+    color: #32ff7e;
+    margin-bottom: 1em;
+    text-transform: uppercase;
+}
+
+main h2 {
+    font-size: 1.5em;
+    font-weight: 500;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+main input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    height: 2em;
+    border-radius: 10px;
+    opacity: 0.8;
+    border: none;
+    margin-top: 1.1em;
+    margin-bottom: 1.8em;
+    padding: 5px;
+    font-size: 1.2em;
+    text-align: center;
+}
+
+main button {
+    width: 30%;
+    height: 2.2em;
+    border-radius: 10px;
+    border: none;
+    background-color: #32ff7e;
+    font-size: 1.5em;
+}
+
+main .result {
+    margin-top: 1.5em;
+}
+
+main .result p {
+    font-size: 3em;
+    color: white;
+
+}
