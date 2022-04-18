@@ -46,7 +46,7 @@
          return resultado
     }
     
-    // Apresentando resultado para o usuario10
+    // Apresentando resultado para o usuario
     let resultado = calcularResultado(array)
     
     alert("x1 " + resultado.x1 + "\n" +
