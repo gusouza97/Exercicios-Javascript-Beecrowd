@@ -79,9 +79,7 @@ const textResult = (result: number) : string => {
             msg = "Nenhum valor atribuido, tente novamente!";
             break;
     }
-
     return msg;
-
 }
 
 // EXECUTANDO A FUNÇÃO 
