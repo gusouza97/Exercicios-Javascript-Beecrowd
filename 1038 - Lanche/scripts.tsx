@@ -1,7 +1,21 @@
+interface productsInterface {
+    id: number,
+    name: string,
+    price: number
+}
+
+interface itensInterface {
+    products: [{
+        [key: number]: productsInterface
+    }]
+}
+
+let itens: itensInterface;
+
 // Objetos 
-let itens: object = {
-    products: [
-        {
+itens = {
+    products:{
+        "cachorro_quente": {
             id: 1,
             name: "cachorro_quente",
             price: 4
@@ -39,16 +53,16 @@ let quantidade: number
 // Buscando o produto
 const SearchProduct = (itens: object, codigo: number) => {
 
+    let size: number = Object.keys(itens.products).length
     let result : number = 0;
-    let tamanho : number = 
 
     for (const [key, value] of Object.entries(itens)) {
 
         console.log(value[1].id)
 
-        for(let i = 0; i < ; i++){
+        for(let i = 0; i < size; i++){
             if(value[i].id == codigo){
-                result = value;
+                result = value[i];
             }
         }
     }
@@ -57,4 +71,4 @@ const SearchProduct = (itens: object, codigo: number) => {
 
 }
 
-SearchProduct(itens, 3);
+SearchProduct(itens, 1);
