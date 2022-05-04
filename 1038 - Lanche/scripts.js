@@ -1,9 +1,8 @@
 (function readyJS(win, doc) {
   "use strict";
 
-  let quantidade;3
+  let quantidade;
   
-
   // Objeto com os itens
   let itens = {
     products: [
