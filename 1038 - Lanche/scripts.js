@@ -1,12 +1,15 @@
 (function readyJS(win, doc) {
   "use strict";
 
+  let quantidade;3
+  
+
   // Objeto com os itens
   let itens = {
     products: [
       {
         id: 1,
-        name: "cachorro_quente",
+        name: "Cachorro Quente",
         price: 4,
       },
       {
@@ -36,19 +39,26 @@
   // Solicitando codigo do produto
   const ShowProducts = (itens) => {
     let size = Object.keys(itens.products).length;
-    let arrProducts;
+    let arrProducts = [];
     let codigo;
     
     // Colocando objeto dentro de uma Array
     for(const [key, value] of Object.entries(itens)){
         for(let i = 0; i < size; i++){
             console.log()
-            arrProducts.push(value[i].id, value[i].name, value[i].price)
+            arrProducts.push([value[i].id, value[i].name, value[i].price])
         }
     }
 
     // Exibindo informacoes e coletando
-    codigo = parseInt(prompt(`LISTA DE PRODUTOS!\n\n ${arrProducts[0][0]}`));
+    codigo = parseInt(prompt(`LISTA DE PRODUTOS!\n 
+    Cod: ${arrProducts[0][0]} Produto: ${arrProducts[0][1]} Preco: ${arrProducts[0][2]}\n 
+    Cod: ${arrProducts[1][0]} Produto: ${arrProducts[1][1]} Preco: ${arrProducts[1][2]}\n 
+    Cod: ${arrProducts[2][0]} Produto: ${arrProducts[2][1]} Preco: ${arrProducts[2][2]}\n 
+    Cod: ${arrProducts[3][0]} Produto: ${arrProducts[3][1]} Preco: ${arrProducts[3][2]}\n 
+    Cod: ${arrProducts[4][0]} Produto: ${arrProducts[4][1]} Preco: ${arrProducts[4][2]}\n 
+    `));
+    
     quantidade = parseInt(prompt("Digite a quantidade comprada"));
 
     return codigo;
