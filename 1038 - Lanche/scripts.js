@@ -1,61 +1,97 @@
-"use strict";
-let itens;
-// Objetos 
-itens = {
-    products: {
-        "cachorro_quente": {
-            id: 1,
-            name: "cachorro_quente",
-            price: 4
-        },
-    }
-};
-{
-    id: 2,
-        name;
-    "X-Salada",
-        price;
-    4.5;
-}
-{
-    id: 3,
-        name;
-    "X-Bacon",
-        price;
-    5;
-}
-{
-    id: 4,
-        name;
-    "Torrada Simples",
-        price;
-    2;
-}
-{
-    id: 5,
-        name;
-    "Refrigerante",
-        price;
-    1.5;
-}
-;
-let codigo;
-let quantidade;
-//codigo = parseInt(prompt("Digite o codigo do Produto")!);
-//quantidade = parseInt(prompt("Digite a quantidade comprada")!)
-//FUNCTIONS
-// Buscando o produto
-const SearchProduct = (itens, codigo) => {
+(function readyJS(win, doc) {
+  "use strict";
+
+  // Objeto com os itens
+  let itens = {
+    products: [
+      {
+        id: 1,
+        name: "cachorro_quente",
+        price: 4,
+      },
+      {
+        id: 2,
+        name: "X-Salada",
+        price: 4.5,
+      },
+      {
+        id: 3,
+        name: "X-Bacon",
+        price: 5,
+      },
+      {
+        id: 4,
+        name: "Torrada Simples",
+        price: 2,
+      },
+      {
+        id: 5,
+        name: "Refrigerante",
+        price: 1.5,
+      },
+    ],
+  };
+
+  //FUNCTIONS
+  // Solicitando codigo do produto
+  const ShowProducts = (itens) => {
     let size = Object.keys(itens.products).length;
-    let result = 0;
-    for (const [key, value] of Object.entries(itens)) {
-        console.log(value[1].id);
-        for (let i = 0; i < size; i++) {
-            if (value[i].id == codigo) {
-                result = value[i];
-            }
+    let arrProducts;
+    let codigo;
+    
+    // Colocando objeto dentro de uma Array
+    for(const [key, value] of Object.entries(itens)){
+        for(let i = 0; i < size; i++){
+            console.log()
+            arrProducts.push(value[i].id, value[i].name, value[i].price)
         }
     }
-    console.log(result);
-};
-SearchProduct(itens, 1);
+
+    // Exibindo informacoes e coletando
+    codigo = parseInt(prompt(`LISTA DE PRODUTOS!\n\n ${arrProducts[0][0]}`));
+    quantidade = parseInt(prompt("Digite a quantidade comprada"));
+
+    return codigo;
+  } 
+
+
+  // Buscando o produto
+  const SearchProduct = (itens, codigo) => {
+    let size = Object.keys(itens.products).length;
+    let result = 0;
+
+    for (const [key, value] of Object.entries(itens)) {
+      for (let i = 0; i < size; i++) {
+        if (value[i].id == codigo) {
+          result = value[i];
+        }
+      }
+    }
+    return result;
+  };
+
+  // Calculando valor produto
+  const CalcValueTotal = (item, quantidade) => {
+    let total = item.price * quantidade;
+    return total;
+  };
+
+  // Exibindo o valor do produto
+  const ShowTotal = (total) => {
+    alert(`Total: R$ ${total.toFixed(2)}`);
+  };
+
+  // CHAMANDO AS FUNCTIONS
+  // Mostrando Produtos e coletando codigo
+  let codigo = ShowProducts(itens);
+
+  // Procurando o Produto
+  let item = SearchProduct(itens, codigo);
+
+  // Calculando Valor Total da Compra
+  let total = CalcValueTotal(item, quantidade);
+
+  // Exibindo Valor total da compra
+  ShowTotal(total);
+
+})(window, document);
